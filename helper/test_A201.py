@@ -5,7 +5,7 @@ from IPython.core.magic import Magics, cell_magic, magics_class, register_cell_m
 @magics_class
 class MyMagic(Magics):
     @cell_magic
-    def magic_func_A201(self, line, cell):
+    def A201_autograde(self, line, cell):
         self.shell.run_cell(cell)
         i = 0
         new_codeblock = ""
