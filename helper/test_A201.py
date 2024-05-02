@@ -5,6 +5,7 @@ For homeworks autograding@A201+A202
 from io import StringIO
 from IPython import get_ipython
 from IPython.core.magic import Magics, cell_magic, magics_class, register_cell_magic
+from IPython.utils.capture import capture_output
 
 @magics_class
 class A201_autograde_magic(Magics):
@@ -30,15 +31,18 @@ class A201_autograde_magic(Magics):
         self.shell.run_cell(new_codeblock)
     
     @cell_magic
-    def A201_autograde_stdout(self, variable, cell):
+    def A201_autograde_stdout(self, line, cell):
         """
         Capture the output of a code cell without stdin and suppresing the display.
+        If output has multiple lines, "\n" is replaced by "#"
         """
-        get_ipython().magics_manager.magics['cell']['capture'](variable, cell)
-        #globals()["os"] = __import__("os")
-        #globals()[variable].show()
-        
-        print(globals().keys())
-        
+        with capture_output(stdout=True, stderr=False, display=False) as result:
+            self.shell.run_cell(cell)
+            message = result.stdout
+        modified_message = message.replace("\n", "#")
+        new_code = fr"{line }= '{modified_message }' "
+        self.shell.run_cell(new_code)
+        print(message)
+
 ipy = get_ipython()
 ipy.register_magics(A201_autograde_magic)
