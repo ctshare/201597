@@ -14,7 +14,9 @@ class MyMagic(Magics):
         for codeline in StringIO(cell):
             new_codeblock += "\t"
             if "input(" in codeline:
-                new_codeblock += codeline[:codeline.find("input(")] + f"in_list[{i}])\n" 
+                start = codeline.find("input(")
+                end = codeline.find(")", start)
+                new_codeblock += codeline[:start] + f"in_list[{i}]" + codeline[end+1:] 
                 i += 1
             else:
                 new_codeblock += codeline
