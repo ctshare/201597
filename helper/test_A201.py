@@ -35,8 +35,10 @@ class A201_autograde_magic(Magics):
         Capture the output of a code cell without stdin and suppresing the display.
         """
         get_ipython().magics_manager.magics['cell']['capture'](variable, cell)
-        globals()["os"] = __import__("os")
-        globals()[variable].show()
+        #globals()["os"] = __import__("os")
+        #globals()[variable].show()
+        
+        print(globals().keys())
         
 ipy = get_ipython()
 ipy.register_magics(A201_autograde_magic)
