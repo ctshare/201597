@@ -1,6 +1,6 @@
 """
 For homeworks autograding@A201+A202
-chentao@iu
+@author: chentao@iu
 """
 
 from io import StringIO
