@@ -45,5 +45,27 @@ class A201_autograde_magic(Magics):
         self.shell.run_cell(new_code)
         print(message)
 
+    @cell_magic
+    def A201_autograde_stdin_gen(self, line, cell):
+        """
+        Transform a cell into a function with user inputs packed into a list as the function parameter.
+        """
+        self.shell.run_cell(cell)
+        i = 0
+        new_codeblock = ""
+        new_codeblock += f"def {line}(in_list):\n"
+        new_codeblock += "\tresult=''\n"
+        new_codeblock += "\tgen = iter(in_list)\n"
+        for codeline in StringIO(cell):
+            new_codeblock += "\t"
+            if "input(" in codeline:
+                start = codeline.find("input(")
+                end = codeline.find(")", start)
+                new_codeblock += codeline[:start] + f"next(gen)" + codeline[end+1:] 
+                i += 1
+            else:
+                new_codeblock += codeline
+        self.shell.run_cell(new_codeblock)
+
 ipy = get_ipython()
 ipy.register_magics(A201_autograde_magic)
