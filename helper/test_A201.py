@@ -70,10 +70,12 @@ class A201_autograde_magic(Magics):
 ipy = get_ipython()
 ipy.register_magics(A201_autograde_magic)
 
-def A201_autograder_message(output_str, ans, input=None):
+def A201_autograder_message(output_str, ans, input=None, message=None):
     if input is not None:
         print(f"Input:{input}")
     print(f"Expected output: {ans}")
     print(f"Your answer: {output_str}")
+    if message is not None:
+        print(f"message:{input}")
     return ans in output_str
     
