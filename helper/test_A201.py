@@ -70,7 +70,7 @@ class A201_autograde_magic(Magics):
 ipy = get_ipython()
 ipy.register_magics(A201_autograde_magic)
 
-def A201_autograder_message(output_str, ans, input=None):
+def A201_autograder_message(output_str, ans, input=False):
     if not input:
         print(f"Input:{input}")
     print(f"Expected output: {ans}")
