@@ -69,3 +69,9 @@ class A201_autograde_magic(Magics):
 
 ipy = get_ipython()
 ipy.register_magics(A201_autograde_magic)
+
+def A201_autograder_message(output_str, ans):
+    print(f"Expected output: {ans}")
+    print(f"Your answer: {output_str}")
+    return output_str in ans
+    
