@@ -1,0 +1,124 @@
+Wilmington
+Boston
+Philadelphia
+Boston
+New Haven
+Charleston
+Charleston
+Philadelphia
+Sacramento
+Reno
+Boise
+Sacramento
+Los Angeles
+Philadelphia
+Boston
+New Haven
+Chicago
+New York
+Washington D.C.
+Seattle
+Portland
+San Francisco
+Austin
+Dallas
+Houston
+Phoenix
+Denver
+Minneapolis
+Atlanta
+Detroit
+Miami
+Orlando
+Las Vegas
+Honolulu
+Anchorage
+Juneau
+Salem
+Hartford
+Providence
+Raleigh
+Richmond
+Saint Paul
+Nashville
+Indianapolis
+Columbus
+Madison
+Birmingham
+Louisville
+Jackson
+Little Rock
+Oklahoma City
+Topeka
+Kansas City
+Lincoln
+Pierre
+Bismarck
+Bozeman
+Salt Lake City
+Cheyenne
+Casper
+Santa Fe
+Albuquerque
+Phoenix
+Tucson
+Las Vegas
+Reno
+Sacramento
+Fresno
+Bakersfield
+Los Angeles
+San Diego
+San Francisco
+Oakland
+San Jose
+San Diego
+Riverside
+San Bernardino
+Anaheim
+Santa Ana
+Long Beach
+Oakland
+Fremont
+Irvine
+Sacramento
+Portland
+Seattle
+Tacoma
+Vancouver
+Spokane
+Olympia
+Salem
+Eugene
+Portland
+Anchorage
+Juneau
+Fairbanks
+Sitka
+Ketchikan
+Kodiak
+Bethel
+Nome
+Unalaska
+Dutch Harbor
+Anchorage
+New York
+New York
+Chicago
+Chicago
+Los Angeles
+Los Angeles
+Houston
+Houston
+Phoenix
+Phoenix
+San Francisco
+San Francisco
+Seattle
+Seattle
+Boston
+Boston
+Philadelphia
+Philadelphia
+Washington D.C.
+Washington D.C.
