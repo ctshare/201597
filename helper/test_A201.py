@@ -45,6 +45,23 @@ class A201_autograde_magic(Magics):
         self.shell.run_cell(new_code)
         print(message)
 
+    def find_parens(self, s):
+        toret = {}
+        pstack = []
+
+        for i, c in enumerate(s):
+            if c == '(':
+                pstack.append(i)
+            elif c == ')':
+                if len(pstack) == 0:
+                    raise IndexError("No matching closing parens at: " + str(i))
+                toret[pstack.pop()] = i
+
+        if len(pstack) > 0:
+            raise IndexError("No matching opening parens at: " + str(pstack.pop()))
+
+        return toret
+    
     @cell_magic
     def A201_autograde_stdin_gen(self, line, cell):
         """
@@ -60,12 +77,14 @@ class A201_autograde_magic(Magics):
             new_codeblock += "\t"
             if "input(" in codeline:
                 start = codeline.find("input(")
-                end = codeline.find(")", start)
+                parenth_dict = self.find_parens(codeline)
+                end = parenth_dict[start+5]
                 new_codeblock += codeline[:start] + f"next(gen)" + codeline[end+1:] 
                 i += 1
             else:
                 new_codeblock += codeline
         self.shell.run_cell(new_codeblock)
+
 
 ipy = get_ipython()
 ipy.register_magics(A201_autograde_magic)
